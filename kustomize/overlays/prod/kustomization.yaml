@@ -12,8 +12,6 @@ commonLabels:
 
 patchesStrategicMerge:
 - deployment_replicas.yaml
-- deployment_env.yaml
-- deployment_volume.yaml
 
 
 configMapGenerator:
@@ -21,11 +19,3 @@ configMapGenerator:
     literals:
       - username=prod-user
 
-secretGenerator:
-  - name: credentials
-    type: Opaque
-    literals:
-      - password=foo
-  - name: certs
-    files:
-      - assets/ca.pem
